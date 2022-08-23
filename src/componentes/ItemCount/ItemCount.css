@@ -1,0 +1,34 @@
+.me-2{
+    min-width: 180px ;
+    margin: 5px 10px 5px 10px !important;
+    align-items: center;
+
+}
+
+.contador-container{
+    text-align: center;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #0d6efd;
+    width: 220px;
+    padding: 5px;
+    align-items: center;
+}
+
+.btn-primary{
+    background-color: white !important;
+    color:#0d6efd;
+}
+
+.resta, .suma{
+    background-color:#0d6efd !important;
+    color:white !important;
+}
+
+.cantidad{
+    width: 100px;
+}
+
+.btn-outline-primary{
+    min-width: 180px !important;
+}
