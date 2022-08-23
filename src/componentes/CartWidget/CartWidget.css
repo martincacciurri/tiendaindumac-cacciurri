@@ -1,0 +1,13 @@
+.cart-container{
+    background-color: #0d6efd;
+    border-radius: 5px;
+    display: flex;
+    width: 65px;
+    align-items: center;
+    color:white;
+    margin: 2px 15px;
+    max-height: 40px;
+    justify-content: space-evenly;
+    padding: 0px;
+}
+

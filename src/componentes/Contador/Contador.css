@@ -1,0 +1,10 @@
+.contador-container{
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.contador-container p{
+    margin:0px;
+    padding: 0px;
+}
