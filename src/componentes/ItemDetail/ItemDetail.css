@@ -1,0 +1,35 @@
+.section-title{
+    padding-left: 60px;
+    /* background-color: violet; */
+    height: 80px;
+    align-items: center;
+}
+
+.item-detail{
+    display: inline-flex;
+    background-color: white;
+    width: 1040px;
+    align-items: center;
+    border: 3px;
+    border-style: solid;
+    border-radius: 8px;
+}
+
+.img-container{
+    transform: scale(0.9);
+}
+
+.detail{
+    
+    text-align: left;
+    align-items: center;
+}
+
+.detail h2{
+    font-weight: 700;
+}
+
+.item-container{
+    padding: 25px;
+    background-color: white;
+}

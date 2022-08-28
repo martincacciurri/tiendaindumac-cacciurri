@@ -1,9 +1,6 @@
-h1{
+.item-list-container {
+    background-color: #bbb;
     align-items: center;
-    height: 100%;
+    padding: 25px;
 }
 
-.productos-card{
-    display: flex;
-    justify-content: space-evenly;
-}

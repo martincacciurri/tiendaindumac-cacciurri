@@ -1,9 +1,8 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.css';
 import NavBar from './componentes/NavBar/NavBar';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
-
-
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -15,9 +14,8 @@ function App() {
       <header className="App-header">
         <NavBar></NavBar> 
       </header>
-      <ItemListContainer greeting="Esta es la propiedad greeting"/>
-      
-      
+      <ItemListContainer/>
+      <ItemDetailContainer/>      
     </div>
   );
 }
