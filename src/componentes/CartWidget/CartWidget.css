@@ -5,9 +5,12 @@
     width: 65px;
     align-items: center;
     color:white;
-    margin: 2px 15px;
+    margin: 5px 15px;
     max-height: 40px;
     justify-content: space-evenly;
     padding: 0px;
 }
 
+.cart-container p{
+    margin-top: 0px !important;
+}

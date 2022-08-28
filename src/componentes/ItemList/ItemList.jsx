@@ -2,9 +2,10 @@ import './ItemList.css'
 import {useState, useEffect} from 'react'
 import getFetch from '../../data/arregloProductos.js'
 import Item from '../Item/Item'
-
+import PulseLoader  from "react-spinners/PulseLoader";
 
 const ItemList = () => {
+    
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -19,7 +20,10 @@ const ItemList = () => {
         <>
             <h1 className='section-title'>Productos</h1>
             {
-                loading ? <h2>Cargando...</h2>
+                loading ? 
+                
+                <PulseLoader cssOverride={{}}/>
+                
                 :
                 <div className='grid-product-container'>
                     <div className='grid-product'>

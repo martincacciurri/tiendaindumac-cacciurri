@@ -1,21 +1,24 @@
-// import { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './App.css';
 import NavBar from './componentes/NavBar/NavBar';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 
-function App() {
 
+function App() {
+ 
 
   // console.log('numeroProductos', numeroProductos)
 
   return (
     <div className="App">
-      <header className="App-header">
-        <NavBar></NavBar> 
-      </header>
-      <ItemListContainer/>
-      <ItemDetailContainer/>      
+      <>
+        <header className="App-header">
+          <NavBar></NavBar> 
+        </header>
+        <ItemListContainer/>
+        <ItemDetailContainer/>   
+      </>         
     </div>
   );
 }
