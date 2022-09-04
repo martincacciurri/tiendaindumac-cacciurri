@@ -5,7 +5,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 
 
-export const ItemCount = ({stock, initial,precio, agregarProducto})=> {
+const ItemCount = ({nombre, stock, initial,precio, agregarProducto})=> {
     // Cuando una propiedad o variable de estado cambie
     // el componente vuelve a renderizarse
     const [contador, setContador] = useState(initial);
@@ -26,7 +26,7 @@ export const ItemCount = ({stock, initial,precio, agregarProducto})=> {
         <div className='contador-container'>  
             <div>
                 <img src="./01.jpg" alt="" className="producto" />
-                <p>Taladro Dowen Pagio</p>
+                <p>{nombre}</p>
                 <h1>${precio}</h1>
                 <ButtonGroup className='me-2' aria-label="Second group">
                     <Button className='resta' onClick={decrementar}>-</Button> 
@@ -43,3 +43,5 @@ export const ItemCount = ({stock, initial,precio, agregarProducto})=> {
         </div>
     )
 }
+
+export default ItemCount

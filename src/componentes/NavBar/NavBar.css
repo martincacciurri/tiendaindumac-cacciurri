@@ -1,6 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap'); */
-
 .navbar-contenedor{
     background-color: white;
     width:100%;
@@ -10,6 +7,7 @@
     align-items: center;
     justify-content: center;
     height: 60px;
+    gap:45px;
 }
 
 .menu{
@@ -19,9 +17,7 @@
     display:flex;
 }
 
-
-
-.menu-link{
+/* .menu-link{
     padding: 16px;
     align-items: center; 
     display: block;
@@ -34,8 +30,47 @@
     text-align: Left;
     letter-spacing: 0.5px;
     color: #060D1D;
-}
+} */
 
 .img_logo{
     max-height: 50px;
+}
+
+.btn-navbar-container{
+    display: flex;
+
+}
+
+.btn-primary{
+    background-color: red;
+}
+
+.classActive {
+    padding: 16px;
+    align-items: center; 
+    display: block;
+    text-decoration: none;
+    Font-family: Inter;
+    font-weight: bold;
+    Font-size: 12px;
+    Line-height: 19px;
+    Line-height: 100%;
+    text-align: Left;
+    letter-spacing: 0.5px;
+    color: #0d6efd;
+}
+
+.classInactive {
+    padding: 16px;
+    align-items: center; 
+    display: block;
+    text-decoration: none;
+    Font-family: Inter;
+    font-weight: bold;
+    Font-size: 12px;
+    Line-height: 19px;
+    Line-height: 100%;
+    text-align: Left;
+    letter-spacing: 0.5px;
+    color: #060D1D;
 }

@@ -1,18 +1,23 @@
 import './Item.css'
-import React from "react"
+import {Link, NavLink} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
-const Item = ({data}) =>{
+const Item = ({item}) =>{
+    const navegar = useNavigate();
+
     return(
         <div>
-             <div className='card' key={data.id}>
+             <div className='card' key={item.id}>
                 <div >
-                    <img src={data.img} alt="" className="card-img"/>
+                    <img src={item.img} alt="" className="card-img"/>
+                </div>
+                <div className='card-data'>
+                    <h1 className='card-description'>{item.nombre}</h1>
+                    <h2 className='card-price'>$ {item.precio}</h2>
                 </div>
                 
-                <h1 className='card-description'>{data.nombre}</h1>
-                <h2 className='card-price'>$ {data.precio}</h2>
                 <div className='card-button'>
-                    <button className='btn-card'>Ver detalle</button>
+                    <button className='btn-card' onClick={()=> navegar(`/item/${item.id}`)}>Ver detalle</button>
                 </div>
                 
                 {/* <p>{item.nombre}</p>

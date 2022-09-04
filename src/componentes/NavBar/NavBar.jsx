@@ -2,24 +2,36 @@ import './NavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button'
 import CartWidget from '../CartWidget/CartWidget';
+import {Link, NavLink} from 'react-router-dom'
 
 function NavBar(){
     return(  
       <div className="navbar-contenedor">
-        <img className="img_logo" src="./indumac-logo.png" alt="" />
+        <NavLink to=''>
+          <div>
+            <img className="img_logo" src="./indumac-logo.png" alt="" />
+          </div>
+        </NavLink>
+       
         <ul className="menu">
           <li className="menu-item">
-            <a className="menu-link">Marcas</a>
+            <NavLink className={({isActive})=> isActive ? "classActive" : "classInactive"} to="/productos">Productos</NavLink>
           </li>
           <li className="menu-item">
-            <a className="menu-link">Productos</a>
+            <NavLink className={({isActive})=> isActive ? "classActive" : "classInactive"} to="/categoria/termo">Termo</NavLink>
           </li>
           <li className="menu-item">
-            <a className="menu-link">Servicio Técnico</a>
+            <NavLink className={({isActive})=> isActive ? "classActive" : "classInactive"} to="/categoria/soldadora">Soldadoras</NavLink>
+          </li>
+          <li className="menu-item">
+            <NavLink className={({isActive})=> isActive ? "classActive" : "classInactive"} to="/serviciotecnico">Servicio Técnico</NavLink>
           </li>
         </ul>
-        <CartWidget></CartWidget>
-        <Button variant="primary">Login</Button> 
+        <div className='btn-navbar-container'>
+          <CartWidget></CartWidget>
+          <Button variant="btn primary">Login</Button> 
+        </div>
+       
       </div>
     )
 }

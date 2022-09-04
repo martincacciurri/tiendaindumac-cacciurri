@@ -10,15 +10,17 @@
     width: 1040px; 
 }
 
-.section-title{
-    /* padding-left: 60px; */
-    /* background-color: violet; */
+/* .section-title{
+    font-size: 27px;
     height: 0px;
     align-items: center;
-}
+    font-weight: 500;
+    text-align: left !important;
+    padding-left: 200px;
+} */
 
 .grid-product-container{
     justify-content: center;
-    background-color: #bbb;
+    background-color: #e9e9f0;
     
 }

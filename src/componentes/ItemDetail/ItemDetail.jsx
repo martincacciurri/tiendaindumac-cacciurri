@@ -1,50 +1,26 @@
-import { useState, useEffect } from "react";
-import getFetch from "../../data/arregloProductos";
 import './ItemDetail.css'
-import PulseLoader  from "react-spinners/PulseLoader";
+import ItemCount from '../ItemCount/ItemCount'
 
-const ItemDetail = () => {
-    const [data, setData] = useState({})
-    const [loading, setLoading] = useState(true)
+const ItemDetail = ({productoDetalle}) => {
+ 
+    console.log('Llega ',productoDetalle)
+    const {nombre, precio, img, stock} = productoDetalle;
 
-    useEffect(()=>{
-        getFetch
-        .then(response => {
-            setData(response.find(prod => prod.id === 1))
-            setLoading(false)
-        })
-    })
+    const onAdd = () => {
+        console.log('compraste')
+    }
 
-    console.log(data)
     return(
-        <div className="item-container">
-            <h1 className='section-title'>Detalle de producto</h1>
-            {
-                loading ? 
-                
-                <PulseLoader cssOverride={{}}/>
-
-                :
-                <div className="item-detail">
-                    <div className="img-container">
-                        <img src={data.img} alt=''/>
-                    </div>
-                    <div className="detail">
-                        <h2>{data.nombre}</h2>
-                        <h3>$ {data.precio}</h3>
-                        <p>{data.descripcion}</p>
-                        {/* <h4>{data.garantia}</h4>
-                        <p>{data.categoria}</p> */}
-                    </div>
-                    
-                </div>
-            }
-
+        <div className="item-detail">
+            <div className="img-container">
+                <img src={img} alt=''/>
+            </div>
+            <div className="detail-count">
+                <ItemCount nombre={nombre} stock={stock} precio={precio} initial={1} onAdd={onAdd}/>
+            </div>
+            
         </div>
     )
-
-
 } 
-
 
 export default ItemDetail

@@ -3,23 +3,29 @@ import './App.css';
 import NavBar from './componentes/NavBar/NavBar';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
+import PaginaServicioTecnico from './componentes/PaginaServicioTecnico/PaginaServicioTecnico'
+import PaginaError from './componentes/PaginaError/PaginaError'
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
-
-function App() {
- 
-
-  // console.log('numeroProductos', numeroProductos)
-
+function App(){
   return (
+    <BrowserRouter>
     <div className="App">
       <>
-        <header className="App-header">
           <NavBar></NavBar> 
-        </header>
-        <ItemListContainer/>
-        <ItemDetailContainer/>   
+          <Routes>
+            <Route exact path='/productos' element={<ItemListContainer/>}/>
+            <Route exact path='/serviciotecnico' element={<PaginaServicioTecnico/>}/>
+            <Route exact path='/categoria/:categoria' element={<ItemListContainer/>}/>
+            <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
+            // Cuando el usuario se dirija a una pagina que no existe
+            <Route path='*' element={<ItemListContainer/>} />
+
+          </Routes>
+        {/* <ItemDetailContainer/>    */}
       </>         
     </div>
+    </BrowserRouter>
   );
 }
 

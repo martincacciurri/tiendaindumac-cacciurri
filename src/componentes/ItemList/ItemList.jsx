@@ -1,40 +1,27 @@
 import './ItemList.css'
-import {useState, useEffect} from 'react'
-import getFetch from '../../data/arregloProductos.js'
 import Item from '../Item/Item'
-import PulseLoader  from "react-spinners/PulseLoader";
 
-const ItemList = () => {
-    
-    const [data, setData] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    useEffect(()=>{
-        getFetch.then(data=>{
-            setData(data)
-            setLoading(false)
-        })
-    },[])
+const ItemList = ({items}) => {
 
     return(
-        <>
-            <h1 className='section-title'>Productos</h1>
-            {
-                loading ? 
+        // <>
+        //     <h1 className='section-title'>Productos</h1>
+        //     {
+        //         loading ? 
                 
-                <PulseLoader cssOverride={{}}/>
+        //         <PulseLoader cssOverride={{}}/>
                 
-                :
+        //         :
                 <div className='grid-product-container'>
                     <div className='grid-product'>
-                        {data.map(data =>(
-                            <Item key={data.id} data={data}/>
+                        {items.map(producto =>(
+                            <Item key={producto.id} item={producto}/>
                         ))}
                     </div>
                 </div>
                 
-            }
-        </>
+        //     }
+        // </>
     )
 }
 
