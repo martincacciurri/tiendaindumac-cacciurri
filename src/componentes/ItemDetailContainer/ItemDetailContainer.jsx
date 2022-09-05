@@ -11,11 +11,6 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
     console.log('Llega por parametro a ItemDetailContainer: ', id)
     
-    // const getFetch = new Promise((resolve,reject) => {
-    //         resolve(arregloProductos)
-    //         reject(err => console.log(err))
-    // })
-
     console.log('get fecth', getFetch)
 
     useEffect(()=>{
@@ -32,14 +27,6 @@ const ItemDetailContainer = () => {
         })
     },[id])
 
-    // useEffect(()=>{
-    //     getFetch
-    //     .then((res)=> setProductoDetalle(res.find((item)=> item.id === id)))
-    //     .catch((error)=> console.log(error))
-    //     .finally(()=> setLoading(false))
-    // },[id])
-
-
     console.log(productoDetalle)
 
     return(
@@ -52,7 +39,7 @@ const ItemDetailContainer = () => {
                 :
                 
                 <ItemDetail productoDetalle={productoDetalle}/>
-                
+
             }
             
         </div>

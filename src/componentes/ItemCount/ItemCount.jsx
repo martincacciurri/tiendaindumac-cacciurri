@@ -5,7 +5,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 
 
-const ItemCount = ({nombre, stock, initial,precio, agregarProducto})=> {
+const ItemCount = ({nombre, stock, initial,precio, onAdd})=> {
     // Cuando una propiedad o variable de estado cambie
     // el componente vuelve a renderizarse
     const [contador, setContador] = useState(initial);
@@ -38,7 +38,7 @@ const ItemCount = ({nombre, stock, initial,precio, agregarProducto})=> {
             
         </ButtonToolbar> */}
             <div>
-                <Button variant="outline-primary" onClick={()=>(agregarProducto(contador))}>Agregar al carrito</Button> 
+                <Button variant="outline-primary" onClick={()=>(onAdd(contador))}>Agregar al carrito</Button> 
             </div>
         </div>
     )

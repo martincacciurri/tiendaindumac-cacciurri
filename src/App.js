@@ -4,6 +4,9 @@ import NavBar from './componentes/NavBar/NavBar';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import PaginaServicioTecnico from './componentes/PaginaServicioTecnico/PaginaServicioTecnico'
+import PaginaEventos from './componentes/PaginaEventos/PaginaEventos'
+import EventosReact from './componentes/EventosReact/EventosReact'
+import Carrito from './componentes/Carrito/Carrito'
 import PaginaError from './componentes/PaginaError/PaginaError'
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
@@ -18,6 +21,14 @@ function App(){
             <Route exact path='/serviciotecnico' element={<PaginaServicioTecnico/>}/>
             <Route exact path='/categoria/:categoria' element={<ItemListContainer/>}/>
             <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
+            <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
+
+            <Route exact path='/eventos' element={<PaginaEventos/>}/>
+
+            <Route exact path='/eventos-react' element={<EventosReact/>}/>
+
+            <Route exact path='/carrito' element={<Carrito/>}/>
+
             // Cuando el usuario se dirija a una pagina que no existe
             <Route path='*' element={<ItemListContainer/>} />
 
