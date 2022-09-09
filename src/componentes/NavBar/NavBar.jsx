@@ -36,7 +36,7 @@ function NavBar(){
           </li>
 
         </ul>
-        <NavLink to="/carrito">
+        <NavLink to="/cart">
           <div className='btn-navbar-container'>
             <CartWidget></CartWidget>
             <Button variant="btn primary">Login</Button> 

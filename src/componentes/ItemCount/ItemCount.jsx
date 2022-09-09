@@ -26,8 +26,8 @@ const ItemCount = ({nombre, stock, initial,precio, onAdd})=> {
         <div className='contador-container'>  
             <div>
                 <img src="./01.jpg" alt="" className="producto" />
-                <p>{nombre}</p>
-                <h1>${precio}</h1>
+                <h1>{nombre}</h1>
+                <h2>$ {precio}</h2>
                 <ButtonGroup className='me-2' aria-label="Second group">
                     <Button className='resta' onClick={decrementar}>-</Button> 
                     <Button className='cantidad'>{contador}</Button> 

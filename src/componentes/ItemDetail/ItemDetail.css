@@ -38,6 +38,10 @@
 }
 
 .item-container{
-    padding: 25px;
+    padding: 0px;
     background-color: white;
+}
+
+.detail-count{
+    text-align: left;
 }

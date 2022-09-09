@@ -9,9 +9,9 @@ const ItemDetailContainer = () => {
     const [productoDetalle, setProductoDetalle] = useState({})
     const [loading, setLoading] = useState(true)
     const {id} = useParams();
-    console.log('Llega por parametro a ItemDetailContainer: ', id)
+    // console.log('Llega por parametro a ItemDetailContainer: ', id)
     
-    console.log('get fecth', getFetch)
+    // console.log('get fecth', getFetch)
 
     useEffect(()=>{
         getFetch.then(resultado=>{
@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
                 setProductoDetalle(resultado)
             }else{
                 const nuevaLista = resultado.find(item=>item.id === parseInt(id))
-                console.log('idssssssss', nuevaLista)
+                // console.log('idssssssss', nuevaLista)
                 setProductoDetalle(nuevaLista) 
             }
             
@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
         })
     },[id])
 
-    console.log(productoDetalle)
+    // console.log(productoDetalle)
 
     return(
         <div className='item-detail-container'>

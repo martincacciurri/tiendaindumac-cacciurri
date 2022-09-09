@@ -17,7 +17,7 @@ const Item = ({item}) =>{
                 </div>
                 
                 <div className='card-button'>
-                    <button className='btn-card' onClick={()=> navegar(`/item/${item.id}`)}>Ver detalle</button>
+                    <button className='btn btn-outline-primary' onClick={()=> navegar(`/item/${item.id}`)}>Ver detalle</button>
                 </div>
                 
                 {/* <p>{item.nombre}</p>

@@ -1,12 +1,12 @@
 .me-2{
-    min-width: 180px ;
+    min-width: 100px ;
     margin: 20px 0px 20px 0px !important;
     align-items: center;
 
 }
 
 .contador-container{
-    text-align: center;
+    text-align: left;
     /* border-radius: 8px;
     border-style: solid;
     border-color: #0d6efd; */
@@ -15,25 +15,30 @@
     align-items: center;
 }
 
+.contador-container h1{
+    font-size: 26px;
+}
+
 .btn-primary{
     background-color: white !important;
     /* color:#0d6efd; */
-    color:black;
-    border-color: black !important;
+    color:#0d6efd;
+    border-color: #0d6efd !important;
 }
 
 .resta, .suma{
     /* background-color:#0d6efd !important; */
-    background-color:black !important;
+    background-color:#0d6efd !important;
     color:white !important;
 }
 
 .cantidad{
-    width: 100px;
+    width: 60px;
 }
 
 .btn-outline-primary{
-    min-width: 180px !important;
-    margin: 10px 0px 10px 0px;
+    min-width: 70px !important;
+    /* margin: 10px 0px 10px 0px; */
+    font-size: 12px;
     /* align-items: center; */
 }
