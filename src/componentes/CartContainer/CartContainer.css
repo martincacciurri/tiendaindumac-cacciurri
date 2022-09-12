@@ -41,3 +41,10 @@
 .lista-items h2{
     padding-top:20px;
 }
+
+.menu-carrito{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    vertical-align: middle;
+}

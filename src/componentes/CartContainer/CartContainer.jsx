@@ -4,7 +4,7 @@ import "./CartContainer.css";
 import Alert from 'react-bootstrap/Alert';
 
 const CartContainer = () => {
-    const {productCartList, deleteProduct, total} = useContext(CartContext);
+    const {productCartList, deleteProduct, clearCartList, total} = useContext(CartContext);
     
     return(
         <div className="lista-items">
@@ -17,7 +17,13 @@ const CartContainer = () => {
                 </div>
                 :
                 <div>
-                <h2>Sus compras</h2>
+                    <div className="menu-carrito">
+                        <h2>Sus compras</h2>
+                        <button className="btn btn-warning" onClick={()=>clearCartList()}>
+                            Limpiar carrito
+                        </button>
+                    </div>
+                
                 <h1>Su total es: $ {total}</h1>
                 {
                      productCartList.map(item=>(
