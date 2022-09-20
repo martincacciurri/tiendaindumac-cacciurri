@@ -7,6 +7,7 @@ import PaginaServicioTecnico from './componentes/PaginaServicioTecnico/PaginaSer
 import PaginaEventos from './componentes/PaginaEventos/PaginaEventos'
 import EventosReact from './componentes/EventosReact/EventosReact'
 import PaginaError from './componentes/PaginaError/PaginaError'
+import PaginaFirebase from './componentes/PaginaFirebase/PaginaFirebase'
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import CartContainer from './componentes/CartContainer/CartContainer'
 import { CartProvider } from './context/CartContext'
@@ -35,6 +36,7 @@ function App(){
                   // Cuando el usuario se dirija a una pagina que no existe
                   <Route path='*' element={<ItemListContainer/>} />
 
+                  <Route path='/firebase' element={<PaginaFirebase/>} />
                 </Routes>
               {/* <ItemDetailContainer/>    */}
             </>         
