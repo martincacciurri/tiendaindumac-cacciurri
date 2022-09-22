@@ -1,11 +1,43 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
 import "./CartContainer.css";
 import Alert from 'react-bootstrap/Alert';
+import { db } from '../../utils/firebase';
+import { collection, addDoc, doc, updateDoc} from 'firebase/firestore';
+import { Timestamp } from "firebase/firestore";
 
 const CartContainer = () => {
     const {productCartList, deleteProduct, clearCartList, total} = useContext(CartContext);
-    
+    const [idOrder, setIdOrder] = useState("")
+
+    const sendOrder = (e) =>{
+        e.preventDefault()
+        const order = {
+            buyer: {
+                name: e.target[0].value,
+                phone: e.target[1].value,
+                email: e.target[2].value
+            },
+            items: productCartList,
+            total: total,
+            date: Timestamp.fromDate(new Date())
+        }
+
+        // Crear referencia en la base de datos donde voy a guarder el documento
+        const queryRef = collection(db,"orders")
+        // Agregamos el documento a la base
+        addDoc(queryRef, order).then(respuesta=>setIdOrder(respuesta.id))
+        console.log(order)
+
+    }
+
+    // const updateOrder = () =>{
+    //     const queryRef = doc(db,"items","3KmnqMn8DiL8RCABXMYO")
+    //     updateDoc(queryRef, {
+
+    //     })
+    // }
+
     return(
         <div className="lista-items">
             {
@@ -42,7 +74,26 @@ const CartContainer = () => {
                         </div>
                       ))
                 }
+
+                    <div className="form-order">
+                    <form onSubmit={sendOrder}>
+                        <input type="text" placeholder='Nombre'/>
+                        <input type="text" placeholder='Telefono'/>
+                        <input type="email" placeholder='Email'/>
+                        <button type='submit'>
+                            Enviar orden
+                        </button>
+                        {/* <button onClick={updateOrder}>
+                            Actualizar orden
+                        </button> */}
+                    </form>
+                    </div>
+
                 </div>
+
+                
+
+
             }
         </div>
     ) 

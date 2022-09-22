@@ -1,4 +1,4 @@
-import { collection, getDocs , doc , getDoc} from "firebase/firestore";
+import { collection, getDocs , doc , getDoc, query, where, limit } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { db } from "../../utils/firebase";
 
@@ -9,12 +9,13 @@ const PaginaFirebase = () => {
     useEffect(()=>{
         const getData = async()=>{
             // consulta de referencia
-            const query = collection(db, "items")
-            const response = await getDocs(query);
+            const queryRef = query(collection(db,"items"), where("categoria", "==", "soldadora"), limit(1));
+            const response = await getDocs(queryRef );
             const docs = response.docs;
             // console.log("doc info", docs[0].data())
             // console.log("doc id", docs[0].id)
             const data = docs.map(doc=>{return{...doc.data(), id:doc.id}})
+            console.log(data) 
             setArregloProductos(data);
         }
         getData()

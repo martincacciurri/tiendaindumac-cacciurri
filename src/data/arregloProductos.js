@@ -64,7 +64,7 @@ export const arregloProductos = [
     {
         // id: 8,
         nombre: 'Termo Crossmaster',
-        descripcion: 'Esto es un termo',
+        descripcion: 'Esto es una soldadora inverter',
         precio: '1900',
         categoria: 'termo',
         stock:6
