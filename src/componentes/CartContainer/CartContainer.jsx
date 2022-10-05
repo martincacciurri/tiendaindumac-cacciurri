@@ -24,7 +24,7 @@ const CartContainer = () => {
     }
 
     const sendOrder = (e) =>{
-        
+
         e.preventDefault()
         const order = {
             buyer: {
@@ -63,6 +63,7 @@ const CartContainer = () => {
                     </div>
                 
                 <h1>Su total es: $ {total}</h1>
+                <div className="items-carrito">
                 {
                      productCartList.map(item=>(
                         <div className= "carrito-container">
@@ -80,6 +81,8 @@ const CartContainer = () => {
                         </div>
                       ))
                 }
+                </div>
+                
                 <div className="div-form" >
                     <h2>Orden de compra</h2>
                     <form className="form-order" onSubmit={sendOrder}>
