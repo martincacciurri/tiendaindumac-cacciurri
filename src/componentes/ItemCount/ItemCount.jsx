@@ -32,9 +32,6 @@ const ItemCount = ({nombre, stock, initial,precio, onAdd})=> {
                     <Button className='suma' onClick={incrementar}>+</Button>
                 </ButtonGroup>
             </div> 
-            {/* <ButtonToolbar aria-label="Toolbar with button groups">  
-            
-        </ButtonToolbar> */}
             <div>
                 <Button variant="outline-primary" onClick={()=>(onAdd(contador))}>Agregar al carrito</Button> 
             </div>

@@ -1,16 +1,30 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import CartContext from "../../context/CartContext";
 import "./CartContainer.css";
 import Alert from 'react-bootstrap/Alert';
 import { db } from '../../utils/firebase';
 import { collection, addDoc, doc, updateDoc} from 'firebase/firestore';
 import { Timestamp } from "firebase/firestore";
+import Swal from 'sweetalert2';
+import thanks from '../../assets/thanks.png'
+
 
 const CartContainer = () => {
     const {productCartList, deleteProduct, clearCartList, total} = useContext(CartContext);
     const [idOrder, setIdOrder] = useState("")
+    const [compra, setCompra] = useState(false)
+   
+    const mostrarAlerta = () =>{
+        Swal.fire({
+            imagenURL: thanks,
+            title: "¡Gracias por tu compra!",
+            button: "Aceptar",
+            confirmButtonColor: '#0d6efd'
+        })
+    }
 
     const sendOrder = (e) =>{
+        
         e.preventDefault()
         const order = {
             buyer: {
@@ -22,22 +36,14 @@ const CartContainer = () => {
             total: total,
             date: Timestamp.fromDate(new Date())
         }
-
         // Crear referencia en la base de datos donde voy a guarder el documento
         const queryRef = collection(db,"orders")
         // Agregamos el documento a la base
-        addDoc(queryRef, order).then(respuesta=>setIdOrder(respuesta.id))
+        addDoc(queryRef, order)
+        .then(respuesta=>setIdOrder(respuesta.id)) 
+        .then(mostrarAlerta())       
         console.log(order)
-
     }
-
-    // const updateOrder = () =>{
-    //     const queryRef = doc(db,"items","3KmnqMn8DiL8RCABXMYO")
-    //     updateDoc(queryRef, {
-
-    //     })
-    // }
-
     return(
         <div className="lista-items">
             {
@@ -74,28 +80,21 @@ const CartContainer = () => {
                         </div>
                       ))
                 }
-
-                    <div className="form-order">
-                    <form onSubmit={sendOrder}>
-                        <input type="text" placeholder='Nombre'/>
-                        <input type="text" placeholder='Telefono'/>
-                        <input type="email" placeholder='Email'/>
-                        <button type='submit'>
+                <div className="div-form" >
+                    <h2>Orden de compra</h2>
+                    <form className="form-order" onSubmit={sendOrder}>
+                        <input className="form-input" type="text" placeholder='Nombre'/>
+                        <input className="form-input" type="text" placeholder='Telefono'/>
+                        <input className="form-input" type="email" placeholder='Email'/>
+                        <button onClick={mostrarAlerta} className="btn btn-outline-primary" type='submit'>
                             Enviar orden
                         </button>
-                        {/* <button onClick={updateOrder}>
-                            Actualizar orden
-                        </button> */}
                     </form>
-                    </div>
-
                 </div>
-
-                
-
-
+     
+                </div>
             }
-        </div>
+        </div>    
     ) 
 }
 

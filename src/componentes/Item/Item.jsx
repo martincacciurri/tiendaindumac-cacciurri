@@ -19,10 +19,6 @@ const Item = ({item}) =>{
                 <div className='card-button'>
                     <button className='btn btn-outline-primary' onClick={()=> navegar(`/item/${item.id}`)}>Ver detalle</button>
                 </div>
-                
-                {/* <p>{item.nombre}</p>
-                <p>Nro Likes</p>
-                <button onClick={incrementar}>+</button> */}
             </div>
         </div>
     )

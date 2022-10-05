@@ -9,13 +9,10 @@ const ItemDetail = ({productoDetalle}) => {
     const {addProduct} = useContext(CartContext);
     const [cantidadComprada, setCantidadComprada] = useState(0)
 
-    // console.log('Llega ',productoDetalle)
     const {nombre, precio, img, stock} = productoDetalle;
 
     const onAdd = (contador) => {
-        // console.log('compraste',contador)
         const newProduct = {...productoDetalle, quantity:contador}
-        // console.log('newProduct', newProduct)
         addProduct(newProduct, contador)
         setCantidadComprada(contador)
     }

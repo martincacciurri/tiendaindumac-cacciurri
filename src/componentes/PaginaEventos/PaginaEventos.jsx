@@ -11,18 +11,6 @@ const PaginaEventos = () => {
         setOpenModal(!openModal)
     }
 
-    // const hacerClick = (event) =>{
-    //     console.log('click',event)
-    //     setOpenModal(false)
-    // }
-
-    // useEffect(() =>{
-    //     window.addEventListener('click', hacerClick)
-    //     return() => {
-    //         window.removeEventListener('click',hacerClick)
-    //     }
-    // },[])
-
     const enviarFormulario = (event) => {
         event.preventDefault()
         console.log('form enviado'); 

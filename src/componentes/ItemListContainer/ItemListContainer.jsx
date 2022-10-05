@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import PulseLoader  from "react-spinners/PulseLoader";
 import {arregloProductos} from '../../data/arregloProductos'
-
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../utils/firebase";
 
@@ -13,13 +12,6 @@ const ItemListContainer = () =>{
 
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
-
-    // const getFetch = new Promise((resolve,reject) => {
-    //     setTimeout(()=> {
-    //         resolve(arregloProductos)
-    //         reject(err => console.log(err))
-    //     },2000)
-    // })
 
     useEffect(()=>{
 
@@ -42,30 +34,8 @@ const ItemListContainer = () =>{
             }
         }
         getData();
-
-        // getFetch.then(resultado=>{
-        //     if(!categoria){
-        //         setProductos(resultado)
-        //     }else{
-        //         const nuevaLista = resultado.filter(item=>item.categoria === categoria)
-        //         console.log('categoriasssss', nuevaLista)
-        //         setProductos(nuevaLista) 
-        //     }
-            
-        //     setLoading(false)
-        // })
     },[categoria])
 
-
-    
-    // const titulo = ((tit)=>{
-    //     if (categoria == null){
-    //         return titulo = categoria[0].toUpperCase() + categoria.substring(1) +"s"
-    //     }else{
-    //         return titulo = 'Productos'
-    //     }
-    // })
-    
     console.log("Productos", productos)
 
     return(

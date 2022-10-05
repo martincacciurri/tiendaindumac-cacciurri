@@ -17,21 +17,6 @@
     display:flex;
 }
 
-/* .menu-link{
-    padding: 16px;
-    align-items: center; 
-    display: block;
-    text-decoration: none;
-    Font-family: Inter;
-    font-weight: bold;
-    Font-size: 12px;
-    Line-height: 19px;
-    Line-height: 100%;
-    text-align: Left;
-    letter-spacing: 0.5px;
-    color: #060D1D;
-} */
-
 .img_logo{
     max-height: 50px;
 }

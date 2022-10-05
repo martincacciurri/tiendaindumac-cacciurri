@@ -1,8 +1,6 @@
 .card{
     border: 3px;
     border-radius: 8px;
-    /* border-style:  solid;
-    border-color: #000; */
     background-color: #FFF;
     width: 200px;
     height: 350px;
@@ -20,7 +18,6 @@
 }
 
 .card-description{
-    /* background-color: pink; */
     text-align: center;
     font-weight: 300;
     font-size: 13px;
@@ -30,7 +27,6 @@
 }
 
 .card-price{
-    /* background-color: brown; */
     text-align: center;
     font-weight: 600;
     font-size: 22px;

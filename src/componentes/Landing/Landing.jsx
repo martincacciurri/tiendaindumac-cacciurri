@@ -8,7 +8,6 @@ import {arregloProductos} from '../../data/arregloProductos'
 const Landing = () => {
     const[productos, setProductos] = useState([]);
 
-    // Se simula una petición al servidor
     const obtenerProductos = () =>{
         return new Promise((resolve, reject)=>{
             setTimeout(()=>{
@@ -17,8 +16,6 @@ const Landing = () => {
         })
     }
 
-    // Usamos useEffect cuando esperamos el resultado de una petición
-    // useEffect(funcion, arreglo) 
     useEffect(()=> {
         const resultadoObtenerProductos = async()=>{
             try {
@@ -29,7 +26,6 @@ const Landing = () => {
                 console.log('Hubo un error')
             }
         }
-        // 1ro se ejecuta esta función
         resultadoObtenerProductos();
     },[])
 
@@ -37,20 +33,6 @@ const Landing = () => {
         <div className='list-container'>
             <Mensaje/>
             <div className='card-container'>
-                {/* Rendering condicional */}
-
-                {/* De esta manera yo tendría que agregar a mano cada Item, para esto usamos 'map' */}
-                {/* {
-                    // Condición - Se ejecuta cuando recibe al menos 1 elemento del servidor
-                    productos.length>0 &&
-                    <>
-                        <Item item={productos[0]}/>
-                        <Item item={productos[1]}/>
-                        ...
-                    </>
-                } */}
-                
-                {/* map */}
                 {
                     productos.map((producto)=>{
                         return(
