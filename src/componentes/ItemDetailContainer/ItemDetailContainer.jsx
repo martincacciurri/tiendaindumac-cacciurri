@@ -29,15 +29,10 @@ const ItemDetailContainer = () => {
         <div className='item-detail-container'>
             {
                 loading ?
-
                 <PulseLoader cssOverride={{}}/>
-                
                 :
-                
                 <ItemDetail productoDetalle={productoDetalle}/>
-
             }
-            
         </div>
     )
 }

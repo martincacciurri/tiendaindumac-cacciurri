@@ -26,15 +26,6 @@ function NavBar(){
           <li className="menu-item">
             <NavLink className={({isActive})=> isActive ? "classActive" : "classInactive"} to="/serviciotecnico">Servicio Técnico</NavLink>
           </li>
-
-          {/* <li className="menu-item">
-            <NavLink className={({isActive})=> isActive ? "classActive" : "classInactive"} to="/eventos">Eventos</NavLink>
-          </li>
-
-          <li className="menu-item">
-            <NavLink className={({isActive})=> isActive ? "classActive" : "classInactive"} to="/eventos-react">Eventos React</NavLink>
-          </li> */}
-
         </ul>
         <NavLink to="/cart">
           <div className='btn-navbar-container'>
